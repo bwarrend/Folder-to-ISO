@@ -264,15 +264,15 @@ public class MainFrame extends javax.swing.JFrame {
         //mkisofs.exe -J -R -V "label" -iso-level 4 -o pop.iso "input_path"
         ProcessBuilder exe;
         if(jCheckBox1.isSelected() && !jCheckBox2.isSelected()){
-            exe = new ProcessBuilder("mkisofs.exe", "-J", "-V", volumeLabel,
+            exe = new ProcessBuilder("2.fto", "-J", "-V", volumeLabel,
                 "-iso-level", String.valueOf(ISOLevel), "-o", fileName,
                 inputPath);
         }else if(!jCheckBox1.isSelected() && jCheckBox2.isSelected()){
-            exe = new ProcessBuilder("mkisofs.exe", "-R", "-V", volumeLabel,
+            exe = new ProcessBuilder("2.fto", "-R", "-V", volumeLabel,
                 "-iso-level", String.valueOf(ISOLevel), "-o", fileName,
                 inputPath);
         }else if(!jCheckBox1.isSelected() && !jCheckBox2.isSelected()){
-            exe = new ProcessBuilder("mkisofs.exe", "-V", volumeLabel,
+            exe = new ProcessBuilder("2.fto", "-V", volumeLabel,
                 "-iso-level", String.valueOf(ISOLevel), "-o", fileName,
                 inputPath);
         }else{
@@ -284,16 +284,14 @@ public class MainFrame extends javax.swing.JFrame {
             
             
             
-            Process p = new ProcessBuilder().inheritIO().command("mkisofs.exe", "-J", "-R", "-V", volumeLabel,
+            Process p = new ProcessBuilder().inheritIO().command("2.fto", "-J", "-R", "-V", volumeLabel,
                 "-iso-level", String.valueOf(ISOLevel), "-o", fileName,
                 inputPath).start();
             
             
             
-            jTextArea1.setText("Working.  Keep this window open until your "+
-                    "is done being generated.  When is that?  I have no "
-                    + "idea.  Big files take a long time, small ones don't.  "
-                    + "Good luck.");
+            jTextArea1.setText("Progress is shown in the command prompt, keep"
+                    + " both windows open while still in progress.");
         }
 
         //Process process = exe.start();
@@ -333,46 +331,6 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        
-        
-        
-        
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            
-            
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
