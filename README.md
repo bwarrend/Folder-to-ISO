@@ -1,6 +1,6 @@
 FolderToISO
 
-GUI interface for mkisofs.  Makes it much easier to create an ISO from a folder in Windows.
+GUI wrapper for mkisofs.  Makes it much easier to create an ISO from a folder in Windows.
 
 Release:
 https://github.com/bwarrend/Folder-to-ISO/raw/master/Release/FolderToISO.zip
